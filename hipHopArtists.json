@@ -1,0 +1,146 @@
+var = hipHopArtists [
+    {
+      "Name": "Wu-Tang Clan",
+      "City": "Staten Island, NY",
+      "Albums": 6,
+      "Copies Sold": "40 million"
+    },
+    {
+      "Name": "Eminem",
+      "City": "Detroit, MI",
+      "Albums": 8,
+      "Copies Sold": "172 million"
+    },
+    {
+      "Name": "Ice Cube",
+      "City": "Los Angeles, CA",
+      "Albums": 10,
+      "Copies Sold": "25 million"
+    },
+    {
+      "Name": "Warren G",
+      "City": "Long Beach, CA",
+      "Albums": 6,
+      "Copies Sold": "4 million"
+    },
+    {
+      "Name": "Outkast",
+      "City": "Atlanta, GA",
+      "Albums": 6,
+      "Copies Sold": "25 million"
+    },
+    {
+      "Name": "UGK",
+      "City": "Port Arthur, TX",
+      "Albums": 6,
+      "Copies Sold": "3.5 million"
+    },
+    {
+      "Name": "Nas",
+      "City": "Queens, NY",
+      "Albums": 10,
+      "Copies Sold": "15 million"
+    },
+    {
+      "Name": "Snoop Dogg",
+      "City": "Long Beach, CA",
+      "Albums": 15,
+      "Copies Sold": "37 million"
+    },
+    {
+      "Name": "Cypress Hill",
+      "City": "South Gate, CA",
+      "Albums": 8,
+      "Copies Sold": "5 million"
+    },
+    {
+      "Name": "Tech N9ne",
+      "City": "Kansas City, MO",
+      "Albums": 18,
+      "Copies Sold": "2 million"
+    },
+    {
+      "Name": "2pac",
+      "City": "East Harlem, NY / Los Angeles, CA",
+      "Albums": "",
+      "Copies Sold": "42.5 million"
+    },
+    {
+      "Name": "Notorious B.I.G.",
+      "City": "Brooklyn, NY",
+      "Albums": 5,
+      "Copies Sold": "17 million"
+    },
+    {
+      "Name": "Mobb Deep",
+      "City": "Queens, NY",
+      "Albums": 8,
+      "Copies Sold": "2 million"
+    },
+    {
+      "Name": "T.I.",
+      "City": "Atlanta, GA",
+      "Albums": 9,
+      "Copies Sold": "?"
+    },
+    {
+      "Name": "Kendrick Lamar",
+      "City": "Compton, CA",
+      "Albums": 4,
+      "Copies Sold": "5 million"
+    },
+    {
+      "Name": "Childish Gambino",
+      "City": "",
+      "Albums": 3,
+      "Copies Sold": "1.5 million"
+    },
+    {
+      "Name": "J. Cole",
+      "City": "Raleigh, NC",
+      "Albums": 4,
+      "Copies Sold": "3 million"
+    },
+    {
+      "Name": "Big K.R.I.T",
+      "City": "Meridian, MS",
+      "Albums": 2,
+      "Copies Sold": "300,000"
+    },
+    {
+      "Name": "Kanye West",
+      "City": "Chicago, IL",
+      "Albums": 7,
+      "Copies Sold": "66 million"
+    },
+    {
+      "Name": "DMX",
+      "City": "Yonkers, NY",
+      "Albums": 7,
+      "Copies Sold": "74 million"
+    },
+    {
+      "Name": "Yelawolf",
+      "City": "Gadsen, AL",
+      "Albums": 3,
+      "Copies Sold": "300,000"
+    },
+    {
+      "Name": "KRS-One",
+      "City": "South Bronx, NY",
+      "Albums": 13,
+      "Copies Sold": "?"
+    },
+    {
+      "Name": "Big L",
+      "City": "Harlem, NY",
+      "Albums": 2,
+      "Copies Sold": "270,000"
+    },
+    {
+      "Name": "Atmosphere",
+      "City": "Minneapolis, MN",
+      "Albums": 8,
+      "Copies Sold": "?"
+    }
+  ]

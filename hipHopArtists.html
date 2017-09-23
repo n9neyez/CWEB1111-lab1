@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hip-hop Artists' # Album & Sales</title>
+        <meta name="description" content="Hip-hop artists' name, city, albums, copies sold">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- START CSS -->
+        <style>
+            @font-face {
+            font-family: 'Bringthanoize';
+            src: url(fonts/Bringthanoize/Bringthanoize.eot); /* IE9 Compat Modes */
+            src: url(fonts/Bringthanoize/Bringthanoize.eot?#iefix) format('embedded-opentype'), /* IE6-IE8 */
+                url(fonts/Bringthanoize/Bringthanoize.woff2) format('woff2'), /* Super Modern Browsers */
+                url(fonts/Bringthanoize/Bringthanoize.woff) format('woff'), /* Pretty Modern Browsers */
+                url(fonts/Bringthanoize/Bringthanoize.ttf)  format('truetype'), /* Safari, Android, iOS */
+                url(fonts/Bringthanoize/Bringthanoize.svg#svgFontName) format('svg'); /* Legacy iOS */
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                color: white;
+                z-index: 2; 
+                }
+            #container {
+                z-index: 1;
+            }
+            #background-img {
+                overflow: auto;
+                position: relative;
+                }
+            #background-img:before {
+                content: "";
+                position: fixed;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                display: block;
+                background-size:cover;
+                width: 100%;
+                height: 100%; 
+                background-image: url("images/background.jpg");
+                background-attachment: fixed;
+                background-position: center;
+                filter:blur(1.25px);
+                filter: grayscale(.25);
+            /*    border: 1px red solid;    */
+                
+            }
+            header {
+                height: 100px;
+            /*    border: 1px red solid;    */
+            }
+            #title {
+                margin-left: 10px;
+                border-bottom: 2px white solid;  
+                display: inline-block;
+                font-family: 'Bringthanoize';
+                font-size: 25px;
+                height: 100px;
+
+            }
+            footer {
+                text-align: center;
+            /*    border: 1px yellow solid; */
+                position: fixed;
+                right: 0;
+                bottom: 0;
+            }
+            #where-stuff-goes {
+                float: left;
+            /*   border: 1px green solid;   */
+                margin: 40px 0 40px 0;
+            }
+            table, th, td {
+                margin:auto;
+                border:solid 1px #FF0000;
+                padding:2px 4px;
+                font:15px Verdana;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            th {
+                font-weight:bold;
+            }
+            #tableBtn {
+                background-color: white;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: Verdana, Tahoma, sans-serif;
+                position: absolute;
+                right: 700px;
+                top: 150px;
+                z-index: 5;
+            }
+            #averageBtn {
+                background-color: white;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: Verdana, Tahoma, sans-serif;
+                position: absolute;
+                right: 650px;
+                top: 150px;
+                z-index: 4;
+            }
+            #averageDisplay {
+            /*    border: 1px red solid;    */
+                float: right;
+                margin-top: 180px;
+                margin-right: 700px;
+                font-family: 'Bringthanoize';
+                font-size: 300px;
+            }
+        </style>
+    </head>
+<!-- START HTML CONTENT -->
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="background-img"></div>
+        <div id="container">
+            <header>
+                <div id="title">
+                    <h1>Hip-Hop artists' number of albums, city, copies sold.</h1>
+                </div>
+            </header>
+
+            <input type="button" value="Show Table" id="tableBtn" onclick="createTable()" />            
+            <input type="button" value="Average # of Albums" id="averageBtn" onclick="averageAlbums()" />            
+            
+            <div id="averageDisplay">
+
+            </div>
+
+            <div id="where-stuff-goes">
+                    
+            </div>
+
+            <footer>
+                <p> Note: copies sold are approximations and do not respresent exact numbers.<br>
+                    Artists selected by Kenny Xiong.
+                </p>
+            </footer>
+        </div>
+    <!-- START JS -->
+        <script src="hipHopArtists.js"></script>
+        <script type="text/javascript">
+
+        function createTable() {
+            var col = []; //empty array to store keys/headers
+            for (var i = 0; i < hipHopArtists.length; i++) {
+                for (var key in hipHopArtists[i]) {
+                    if (col.indexOf(key) === -1) {
+                        col.push(key);
+                    }
+                }
+            }
+            var table = document.createElement("table");
+
+            var tr = table.insertRow(-1);
+
+            for (var i = 0; i < col.length; i++) {
+                var th = document.createElement("th");
+                th.innerHTML = col[i];
+                tr.appendChild(th);
+            }
+            for (var i = 0; i < hipHopArtists.length; i++) {
+                tr = table.insertRow(-1);
+
+                for (var j = 0; j < col.length; j++ ){
+                    var tableCell = tr.insertCell(-1);
+                    tableCell.innerHTML = hipHopArtists[i][col[j]];
+                }
+            }
+            var whereStuffGoes = document.getElementById("where-stuff-goes");
+            whereStuffGoes.innerHTML = "";
+            whereStuffGoes.appendChild(table);
+
+            var button = document.getElementById("tableBtn");
+            button.style.display = "none";
+
+            document.getElementById("averageBtn").style.display = "initial";
+        
+    }
+/*
+    function newButton() {
+        var btn = document.createElement("button")        
+        var node = document.createTextNode("Average # of Albums");       
+        btn.appendChild(node);
+        btn.style.backgroundColor = "white";
+        btn.style.float = "right";
+        btn.style.marginRight = "625px";
+        btn.style.marginTop = "50px";
+        btn.style.fontFamily = "Verdana";
+        btn.style.fontSize = "20px";
+        btn.style.fontWeight = "bold";
+        btn.setAttribute("onlick", "averageAlbums()");                
+        document.body.appendChild(btn);
+    }
+*/
+    document.getElementById("averageBtn").style.display = "none";
+
+    function averageAlbums() {
+        var total = 0;
+        var averageAlb;
+
+        for (var i = 0; i < hipHopArtists.length; i++) {
+            total += hipHopArtists[i].albums;
+            averageAlb = total / hipHopArtists.length;
+        }
+        document.getElementById("averageDisplay").innerHTML = Math.round(averageAlb);
+    }
+
+
+    /*
+        var i, displayList = "";
+        
+            for (i = 0; i < hipHopArtists.length; i++) {
+                displayList += hipHopArtists[i].name + "<br>";
+            }
+    */
+    /*    txt += "<table border='1'>"
+        for (x in hipHopArtists) {
+            txt += "<tr><td>" + hipHopArtists[x].name + "</td></tr>";
+        }
+        txt += "</table>" 
+        document.getElementById("where-stuff-goes").innerHTML = txt;
+    */
+        //function displayArtists() {
+            //document.getElementById("main-content").innerHTML = displayList;
+            
+        
+        /*
+            var btn = document.createElement("button")        
+            var t = document.createTextNode("Show Info");       
+            btn.appendChild(t);
+            btn.style.backgroundColor = "white";
+            btn.style.float = "left";
+            btn.style.margin = "20px 0px 0px 20px";                          
+            document.body.appendChild(btn);
+        */
+        
+
+    
+        </script>
+    </body>
+</html>
+
+<!--
+    total = 0;
+    x=0
+    var averageSalary
+
+    while (x < ceo.length) {
+        total += ceo[x].salary
+        averageSalary = total / ceo.length;
+    }
+
+-->
